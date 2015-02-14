@@ -1,0 +1,13 @@
+.DS_Store
+ignore
+*.swp
+.idea
+
+# front-end
+/public/js/lib
+
+# middleware/node
+/node_modules
+
+
+
