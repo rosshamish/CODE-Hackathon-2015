@@ -51,8 +51,8 @@ if (env === 'production') {
  * Routes
  */
 
-// serve index
-app.get('/', routes.index);
+app.get('/', require('./routes/index.js').index);
+app.get('/explore', require('./routes/explore.js').explore);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
