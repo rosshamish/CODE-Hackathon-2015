@@ -10,4 +10,4 @@ ignore
 /node_modules
 /public/less/*.css
 
-
+/public/js/browserified/
