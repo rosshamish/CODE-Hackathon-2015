@@ -1,22 +1,19 @@
 !!!
-html(ng-app="winstonApp")
+html(lang="en")
   head
     meta(charset='utf8')
     base(href='/')
-    title Winston UAlberta
+    title App Name
 
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:300,400,600')
+
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/skeleton.css')
     link(rel='stylesheet', href='/css/style.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/angular-material/angular-material.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/angular-material/modules/js/toolbar/toolbar.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/angular-material/themes/blue-grey-theme.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/angular-material/modules/js/slider/slider.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/fullcalendar/fullcalendar.css')
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Raleway:200,300')
-    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
-    
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/bootstrap-material-design/dist/css/material.css')
-    link(rel='stylesheet', href='/js/lib/vendor/bower_components/bootstrap-material-design/dist/css/ripples.css')
+
+    link(rel='icon', type='image/png', href='images/favicon.png')
 
   body
     block body
