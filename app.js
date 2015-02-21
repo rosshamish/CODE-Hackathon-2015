@@ -8,10 +8,10 @@ var express = require('express'),
   methodOverride = require('method-override'),
   errorHandler = require('errorhandler'),
   morgan = require('morgan'),
-  routes = require('./routes'),
   http = require('http'),
   path = require('path'),
-  lessMiddleware = require('less-middleware');
+  lessMiddleware = require('less-middleware'),
+  enrouten = require('express-enrouten');
 
 // module.exports is what other files get if they require() this...so all of 'app' is exposed
 var app = module.exports = express();
@@ -51,11 +51,7 @@ if (env === 'production') {
  * Routes
  */
 
-app.get('/', require('./routes/index.js').index);
-app.get('/explore', require('./routes/explore.js').explore);
-
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.use(enrouten({ directory: './routes' }));
 
 
 /**

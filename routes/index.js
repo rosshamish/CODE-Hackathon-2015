@@ -3,17 +3,8 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index');
-};
-
-exports.partials = function (req, res) {
-  var name = req.params.name;
-  res.render('partials/' + name);
-};
-
-exports.explore = function(req, res) {
-	res.render('explore', {
-		name: 'something'
+module.exports = function(router) {
+	router.get('/', function(req, res) {
+		res.render('index');
 	});
 }
