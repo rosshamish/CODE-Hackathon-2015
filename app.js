@@ -10,7 +10,8 @@ var express = require('express'),
   morgan = require('morgan'),
   routes = require('./routes'),
   http = require('http'),
-  path = require('path');
+  path = require('path'),
+  lessMiddleware = require('less-middleware');
 
 // module.exports is what other files get if they require() this...so all of 'app' is exposed
 var app = module.exports = express();
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(methodOverride());
+app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 var env = process.env.NODE_ENV || 'development';
