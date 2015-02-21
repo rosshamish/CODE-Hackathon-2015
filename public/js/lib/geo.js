@@ -8,14 +8,11 @@
             return;
         }
         mapArea.addClass('success');
-
-        // for testing, since we aren't in edmonton
-        position.coords.latitude = 53.48536;
-        position.coords.longitude = -113.51667;
-        // end testing
-        $('.statusText').text(position.coords.latitude + 'lat, ' + position.coords.longitude + 'lon');
         
-        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        $('.statusText').text(position.coords.latitude + 'lat, ' + position.coords.longitude + 'lon');
+        // for testing, since we aren't in edmonton
+        var latlng = new google.maps.LatLng(53.48536, -113.51667); // southgate, edmonton
+        // var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var myOptions = {
             zoom: 15,
             center: latlng,
