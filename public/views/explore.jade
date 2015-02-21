@@ -1,9 +1,11 @@
 extends layout
 
 block body
-  h1 Explore
+  h1 Explore #{place}
 
   include partials/geo-location
 
   script(src='js/lib/vendor/google-maps-api.js')
   script(src='js/lib/geo.js')
+  script(src='js/exploreBundle.js')
+  script(src='js/explore.js')

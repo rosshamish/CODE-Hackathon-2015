@@ -1,3 +1,4 @@
+
 (function(){
     function success(position) {
         var mapArea = $('.map-area');
@@ -7,18 +8,12 @@
             return;
         }
         mapArea.addClass('success');
-        
-        var statusText = document.createElement('div');
-        statusText.innerHTML = position.coords.latitude + 'lat, ' + position.coords.longitude + 'lon';
-        statusText.className = 'status';
-        
-        var mapCanvas = document.createElement('div');
-        mapCanvas.id = 'mapCanvas';
-        mapCanvas.style.height = '400px';
-        mapCanvas.style.width = '100%';
-          
-        mapArea.append(mapCanvas);
-        mapArea.append(statusText);
+
+        // for testing, since we aren't in edmonton
+        position.coords.latitude = 53.48536;
+        position.coords.longitude = -113.51667;
+        // end testing
+        $('.statusText').text(position.coords.latitude + 'lat, ' + position.coords.longitude + 'lon');
         
         var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var myOptions = {
@@ -28,7 +23,7 @@
             navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+        map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
         
         var marker = new google.maps.Marker({
             position: latlng, 
@@ -36,7 +31,7 @@
         });
     }
     function error(msg) {
-        var s = document.querySelector('#status');
+        var s = document.querySelector('.statusText');
         s.innerHTML = typeof msg == 'string' ? msg : "failed";
         s.className = 'fail';
         
