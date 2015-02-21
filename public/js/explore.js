@@ -1,3 +1,3 @@
-var yegPublicArtUtil = require('../../lib/yeg-public-art/yegPublicArtUtil.js');
+var yegPublicArtUtils = require('../../lib/yeg-public-art/yegPublicArtUtils.js');
 
-console.log(yegPublicArtUtil.getMapMarkers());
+console.log(yegPublicArtUtils.getMapMarkers());
